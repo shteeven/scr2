@@ -1,12 +1,19 @@
-<div class="preview-carousel">
-  <cdk-virtual-scroll-viewport orientation="horizontal" itemSize="272" class="viewport">
-    <div *cdkVirtualFor="let item of items" class="item">
+  <cdk-virtual-scroll-viewport orientation="horizontal" itemSize="272" class="preview-viewport">
+    <div *cdkVirtualFor="let item of items; let i = index" class="item rounded bordered">
       <div class="item-preview">
+        <button class="item-trigger" attr.aria-labelledby="preview-{{item.id}}-{{i}}">
+          16/04/19
+        </button>
         <div class="air-date">
           16/04/19
         </div>
 
       </div>
+      <div class="mat-h4" id="preview-{{item.id}}-{{i}}">
+        {{item.show.label}}
+      </div>
+      <div class="mat-small">
+        {{item.episode.label}}
+      </div>
     </div>
   </cdk-virtual-scroll-viewport>
-</div>

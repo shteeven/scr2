@@ -1,26 +1,54 @@
-.preview-carousel .viewport {
-  height: 10rem;
-}
 
-.preview-carousel .viewport .cdk-virtual-scroll-content-wrapper {
-  display: flex;
-  flex-direction: row;
-}
+.preview-viewport {
+  height: 14rem;
 
-.preview-carousel .item {
-  padding: .5rem;
-}
+  .cdk-virtual-scroll-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding: .5rem;
+    align-items: flex-start;
+  }
 
-.preview-carousel .item-preview {
-  width: 16rem;
-  height: 9rem;
-  background: aqua;
-  position: relative;
-  background-image: url("");
-  .air-date {
-    background: gray;
-    position: absolute;
-    bottom: 0;
-    padding: 0 .25rem;
+  .item {
+    //align-self: flex-start;
+    padding: .5rem;
+    margin-right: 1rem;
+  }
+
+  .item-preview {
+    width: 16rem;
+    height: 9rem;
+    //background: aqua;
+    position: relative;
+    background-image: url("../../assets/brand/brand-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .item-trigger,
+    .air-date {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .air-date {
+      background: gray;
+      padding: 0 .25rem;
+
+    }
+
+    .item-trigger {
+      opacity: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .mat-h4 {
+    margin: 0;
   }
 }
+
+
