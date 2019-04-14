@@ -30,3 +30,8 @@ $scradio-theme: mat-light-theme($scradio-primary, $scradio-accent, $scradio-warn
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.preview {
+  width: 16rem;
+  height: 9rem
+}

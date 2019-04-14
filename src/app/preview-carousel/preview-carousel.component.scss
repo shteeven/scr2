@@ -1,0 +1,26 @@
+.preview-carousel .viewport {
+  height: 10rem;
+}
+
+.preview-carousel .viewport .cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.preview-carousel .item {
+  padding: .5rem;
+}
+
+.preview-carousel .item-preview {
+  width: 16rem;
+  height: 9rem;
+  background: aqua;
+  position: relative;
+  background-image: url("");
+  .air-date {
+    background: gray;
+    position: absolute;
+    bottom: 0;
+    padding: 0 .25rem;
+  }
+}
