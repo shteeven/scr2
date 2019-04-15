@@ -6,9 +6,15 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  selectedStream;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setStream(item) {
+    this.selectedStream = item;
   }
 
 }

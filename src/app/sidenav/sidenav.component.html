@@ -1,8 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
+      [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -36,7 +35,12 @@
         (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>SCRadio</span>
+      <div fxLayout fxLayoutAlign="center" class="logo">
+<!--        <span>SCRadio</span>-->
+        <div>
+          <img src="../../assets/brand/brand-logo.jpg" alt="brand logo">
+        </div>
+      </div>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

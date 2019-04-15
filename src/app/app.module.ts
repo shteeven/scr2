@@ -14,6 +14,8 @@ import { environment } from '../environments/environment';
 import {SharedModule} from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { PreviewCarouselComponent } from './preview-carousel/preview-carousel.component';
+import { PlayerComponent } from './player/player.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PreviewCarouselComponent } from './preview-carousel/preview-carousel.co
     SignUpComponent,
     UsersComponent,
     HomeComponent,
-    PreviewCarouselComponent
+    PreviewCarouselComponent,
+    PlayerComponent,
+    ChatComponent
   ],
   imports: [
     AppRoutingModule,

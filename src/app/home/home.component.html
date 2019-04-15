@@ -1,2 +1,3 @@
-<app-preview-carousel></app-preview-carousel>
+<app-preview-carousel (streamSelected)="setStream($event)"></app-preview-carousel>
 <mat-divider></mat-divider>
+<app-player [selectedStream]="selectedStream"></app-player>
