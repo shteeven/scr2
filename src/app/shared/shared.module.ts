@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MaterialModule} from '../material.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import { MediaChatComponent } from './media-chat/media-chat.component';
-import { MediaViewerComponent } from './media-viewer/media-viewer.component';
-import { MediaWrapperComponent } from './media-wrapper/media-wrapper.component';
+import {MediaChatComponent} from './media-chat/media-chat.component';
+import {MediaViewerComponent} from './media-viewer/media-viewer.component';
+import {MediaWrapperComponent} from './media-wrapper/media-wrapper.component';
 
 const exportModules = [
   CommonModule,
   MaterialModule,
   ReactiveFormsModule
 ];
-const exportComponents = [MediaChatComponent, MediaViewerComponent, MediaWrapperComponent];
+const exportComponents = [
+  MediaChatComponent,
+  MediaViewerComponent,
+  MediaWrapperComponent
+];
 
 @NgModule({
   declarations: [...exportComponents],
@@ -23,4 +27,5 @@ const exportComponents = [MediaChatComponent, MediaViewerComponent, MediaWrapper
     ...exportComponents
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
