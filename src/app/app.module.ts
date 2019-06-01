@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { PreviewCarouselComponent } from './preview-carousel/preview-carousel.component';
 import { PlayerComponent } from './player/player.component';
 import { ChatComponent } from './chat/chat.component';
+import { CaitsDevelopmentComponent } from './caits-development/caits-development.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ChatComponent } from './chat/chat.component';
     HomeComponent,
     PreviewCarouselComponent,
     PlayerComponent,
-    ChatComponent
+    ChatComponent,
+    CaitsDevelopmentComponent
   ],
   imports: [
     AppRoutingModule,
