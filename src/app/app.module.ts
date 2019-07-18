@@ -3,19 +3,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UsersComponent } from './users/users.component';
-import { EpisodeListComponent } from './episode-list/episode-list.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UsersComponent } from './pages/users/users.component';
+import { EpisodeListComponent } from './components/episode-list/episode-list.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { PlaylistComponent } from './playlist/playlist.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import {SharedModule} from './shared/shared.module';
-import { HomeComponent } from './home/home.component';
-import { PreviewCarouselComponent } from './preview-carousel/preview-carousel.component';
-import { PlayerComponent } from './player/player.component';
-import { ChatComponent } from './chat/chat.component';
+import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './pages/home/home.component';
+import { PreviewCarouselComponent } from './components/preview-carousel/preview-carousel.component';
+import { PlayerComponent } from './components/player/player.component';
+import { ChatComponent } from './components/chat/chat.component';
 import { CaitsDevelopmentComponent } from './caits-development/caits-development.component';
 
 @NgModule({
@@ -43,4 +43,4 @@ import { CaitsDevelopmentComponent } from './caits-development/caits-development
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

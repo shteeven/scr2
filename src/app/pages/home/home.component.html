@@ -1,0 +1,73 @@
+<div class="content mat-typography" (scroll)="onWindowScroll($event)">
+  <mat-toolbar class="scr-toolbar" [ngClass]="{ scrolled: isScrolled }">
+    <!--    <button mat-icon-button>-->
+    <!--      <mat-icon>menu</mat-icon>-->
+    <!--    </button>-->
+    <div class="brand"></div>
+    <div class="page-nav">
+      <!--      <button mat-button></button>-->
+      <button mat-button>Main</button>
+      <button mat-button>My Stuff</button>
+      <button mat-button>Suggested</button>
+    </div>
+  </mat-toolbar>
+  <div class="carousel-container">
+    <div class="carousel-img img-1 active">
+      <div class="overlay"></div>
+      <div class="info">
+        <h3 class="info-title">
+          GRIME IN KOREA
+        </h3>
+        <p class="info-text">
+          Grime is catching fire in Asia, with Seoul at the centre. Check out our special shows with worldwide guests
+          and local trailblazers.
+        </p>
+        <div class="info-actions">
+          <button mat-icon-button matTooltip="Play now">
+            <mat-icon>play_arrow</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Add to playlist">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Find out more">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-img"></div>
+    <div class="carousel-img"></div>
+  </div>
+
+  <div class="featured-container">
+    <h2 class="flush">Featured</h2>
+    <div class="featured-img-wrapper">
+      <button mat-icon-button class="slide-control left">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <div class="featured-img img-1"></div>
+      <div class="featured-img img-2"></div>
+      <div class="featured-img img-3"></div>
+      <button mat-icon-button class="slide-control right">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="featured-container updates">
+    <h2 class="flush">Updates</h2>
+    <div class="featured-img-wrapper">
+      <button mat-icon-button class="slide-control left">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <div class="featured-img img-1"></div>
+      <div class="featured-img img-2"></div>
+      <div class="featured-img img-3"></div>
+      <button mat-icon-button class="slide-control right">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<!--<app-preview-carousel (streamSelected)="setStream($event)"></app-preview-carousel>-->
+<!--<mat-divider></mat-divider>-->
+<!--<app-player [selectedStream]="selectedStream"></app-player>-->

@@ -1,20 +1,28 @@
-@import './theming';
+@import 'styles/theming';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: mat-color($scradio-background, background);
+  overflow: hidden;
+}
 
 .preview {
   width: 16rem;
-  height: 9rem
+  height: 9rem;
 }
 
 .rounded {
   overflow: hidden;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 .rounded-tl {
   overflow: hidden;
-  border-top-right-radius: .25rem;
+  border-top-right-radius: 0.25rem;
 }
 
 .bordered {
@@ -26,7 +34,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 1px;
   width: 1px;
   clip: rect(1px 1px 1px 1px); // IE 6 and 7
-  clip: rect(1px,1px,1px,1px);
+  clip: rect(1px, 1px, 1px, 1px);
   clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   overflow: hidden !important;
@@ -50,10 +58,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-right: 1rem;
 }
 .mr-4 {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .mr-5 {
-  margin-right: .25rem;
+  margin-right: 0.25rem;
 }
 .p-1 {
   padding: 3rem;
@@ -65,10 +73,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 1rem;
 }
 .p-4 {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 .p-5 {
-  padding: .25rem;
+  padding: 0.25rem;
 }
 //.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper {
 //  min-height: 100%;
