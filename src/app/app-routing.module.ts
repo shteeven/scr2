@@ -9,12 +9,17 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'landing',
+    loadChildren: () => import('./pages/landing/landing.module').then(mod => mod.LandingModule)
   },
   {
     path: '',
-    component: HomeComponent
+    redirectTo: 'landing',
+    pathMatch: 'full'
   }
 ];
 
