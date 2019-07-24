@@ -16,7 +16,7 @@
 const express = require('express');
 const compression = require('compression');
 
-const _port = 4100;
+const _port = process.env.PORT || 4100;
 const _app_folder = 'dist/scradio';
 
 const app = express();
