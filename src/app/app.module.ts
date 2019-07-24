@@ -17,6 +17,7 @@ import { PreviewCarouselComponent } from './components/preview-carousel/preview-
 import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { CaitsDevelopmentComponent } from './caits-development/caits-development.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CaitsDevelopmentComponent } from './caits-development/caits-development
     BrowserAnimationsModule,
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

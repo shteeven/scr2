@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaService } from '../../../services/media.service';
 
 @Component({
   selector: 'app-landing',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  items = [];
-  constructor() {}
+  videos$;
+
+  constructor(private mediaService: MediaService) {
+    this.videos$ = mediaService.getVideoList();
+  }
 
   ngOnInit() {}
 }

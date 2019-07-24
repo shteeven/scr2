@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 // import {image, name, seed} from 'fak';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map, mergeMap } from 'rxjs/operators';
 
 export interface MediaMetadata {
   label: string;
@@ -17,81 +19,26 @@ export interface MediaItem {
   imageUrl?: string;
 }
 
+const baseUrl = 'https://api.dailymotion.com';
+
 @Injectable({
   providedIn: 'root'
 })
 export class MediaService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getLatest(): Observable<MediaItem[]> {
-    const numberOnAir = Math.floor(Math.random() * 5) + 1;
-    // let currentNumber = 0;
-    // let onAir = true;
-    const date = new Date();
-    // seed(123);
-    //
-    // const items = Array.from({length: 1000}).map((_, i) => {
-    //   const aRandomValue = Math.random();
-    //   if (aRandomValue > .7) {
-    //     date.setDate(date.getDate() - 1);
-    //   }
-    //   const newId = `${Math.floor(aRandomValue * 2000000000)}-${i}`;
-    //
-    //   if (onAir) {
-    //     currentNumber++;
-    //     if (currentNumber > numberOnAir) {
-    //       onAir = false;
-    //     }
-    //   }
-    //
-    //   let imageUrl;
-    //   switch (Math.floor(aRandomValue  * 10)) {
-    //     case 9:
-    //       imageUrl = image.abstract();
-    //       break;
-    //     case 8:
-    //       imageUrl = image.nightlife();
-    //       break;
-    //     case 7:
-    //       imageUrl = image.cats();
-    //       break;
-    //     case 6:
-    //       imageUrl = image.technics();
-    //       break;
-    //     case 5:
-    //       imageUrl = image.nature();
-    //       break;
-    //     case 4:
-    //       imageUrl = image.people();
-    //       break;
-    //     case 3:
-    //       imageUrl = image.city();
-    //       break;
-    //     case 2:
-    //       imageUrl = image.food();
-    //       break;
-    //     case 1:
-    //       imageUrl = image.animals();
-    //       break;
-    //     default:
-    //       imageUrl = '../../assets/brand/maxresdefault.jpg';
-    //   }
-    //
-    //   return {
-    //     id: `${newId}-item`,
-    //     show: {
-    //       label: name.findName(),
-    //       id: `${newId}-show`,
-    //       imageUrl,
-    //     },
-    //     episode: {
-    //       label: name.findName(),
-    //       id: `${newId}-episode`,
-    //       airDate: new Date(date),
-    //       onAir: onAir
-    //     }
-    //   };
-    // });
-    return of([]);
+  getVideoList() {
+    return this.http
+      .get<{ list: any[] }>(`${baseUrl}/user/scr/videos?limit=5&fields=id,title,thumbnail_240_url,description`)
+      .pipe(
+        map(({ list }) => {
+          console.log(list);
+          return list;
+        })
+      );
+  }
+
+  getVideoDetails(id) {
+    return this.http.get(`${baseUrl}/video/${id}`);
   }
 }

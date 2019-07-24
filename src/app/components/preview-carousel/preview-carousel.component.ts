@@ -13,12 +13,7 @@ export class PreviewCarouselComponent implements OnInit {
 
   constructor(private media: MediaService) {}
 
-  ngOnInit() {
-    this.media.getLatest().subscribe(data => {
-      this.items = data;
-      this.playItem(data[0]);
-    });
-  }
+  ngOnInit() {}
 
   playItem(item) {
     this.streamSelected.emit(item);
