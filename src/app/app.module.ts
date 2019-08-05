@@ -16,8 +16,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { PreviewCarouselComponent } from './components/preview-carousel/preview-carousel.component';
 import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
-import { CaitsDevelopmentComponent } from './caits-development/caits-development.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './layout/header/header.component';
+import { IsScrolledDirective } from './directive/scrolling/is-scrolled.directive';
+import { ListenForScrollDirective } from './directive/scrolling/listen-for-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
     PreviewCarouselComponent,
     PlayerComponent,
     ChatComponent,
-    CaitsDevelopmentComponent
+    HeaderComponent,
+    IsScrolledDirective,
+    ListenForScrollDirective
   ],
   imports: [
     AppRoutingModule,
