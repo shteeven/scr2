@@ -1,5 +1,19 @@
 @import 'styles/theming';
 @import 'styles/branding.scss';
+@import 'styles/structural.scss';
+@import 'styles/angular.material.scss';
+
+@font-face {
+  font-family: 'DIN Condensed';
+  src: url('assets/fonts/DIN Condensed Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DIN Alternate';
+  src: url('assets/fonts/DINPro-Regular.otf') format('opentype');
+}
+//* {
+//  font-family: "DIN Alternate", Roboto, 'Helvetica Neue', sans-serif !important;
+//}
 
 html,
 body {
@@ -7,12 +21,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  background-color: mat-color($scradio-background, background);
+  background-color: black;
   overflow: hidden;
-  background-image: url('./assets/brand/brand-bg-light.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .preview {
@@ -43,46 +53,3 @@ body {
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   overflow: hidden !important;
 }
-
-.cdk-virtual-scroll-content-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.mr-1 {
-  margin-right: 1rem;
-}
-.mr-1 {
-  margin-right: 3rem;
-}
-.mr-2 {
-  margin-right: 1.5rem;
-}
-.mr-3 {
-  margin-right: 1rem;
-}
-.mr-4 {
-  margin-right: 0.5rem;
-}
-.mr-5 {
-  margin-right: 0.25rem;
-}
-.p-1 {
-  padding: 3rem;
-}
-.p-2 {
-  padding: 1.5rem;
-}
-.p-3 {
-  padding: 1rem;
-}
-.p-4 {
-  padding: 0.5rem;
-}
-.p-5 {
-  padding: 0.25rem;
-}
-//.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper {
-//  min-height: 100%;
-//  width: 100%;
-//}

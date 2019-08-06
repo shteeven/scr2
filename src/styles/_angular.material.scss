@@ -1,0 +1,9 @@
+mat-form-field {
+  &.inline {
+    line-height: 1.125 !important; // todo: remove when line-height hack is removed
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding-bottom: 0;
+    }
+  }
+}

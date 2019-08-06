@@ -29,3 +29,8 @@ $scradio-background: map-get($scradio-theme, background);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($scradio-theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: 'DIN Alternate'
+);
+@include mat-core($custom-typography);
