@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VideoPlayerService } from '../../shared/video-player/video-player.service';
 
 // Stateful component
 
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
       <div class="toolbar-items">
         <span class="branding">Seoul Community Radio</span>
         <div class="scr-nav">
-          <button class="listen" mat-flat-button color="warn">
+          <button class="listen" mat-flat-button color="warn" (click)="playLive()">
             LIVE
           </button>
         </div>
@@ -70,4 +71,12 @@ import { Component } from '@angular/core';
     `
   ]
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  constructor(private videoPlayer: VideoPlayerService) {}
+
+  playLive() {
+    this.videoPlayer.open({
+      id: 'x6u83op'
+    });
+  }
+}

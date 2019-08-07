@@ -16,6 +16,9 @@ import { Component } from '@angular/core';
         height: 100vh;
         overflow-y: auto;
       }
+      main {
+        padding-bottom: 5rem;
+      }
     `
   ]
 })

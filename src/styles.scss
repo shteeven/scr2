@@ -53,3 +53,9 @@ body {
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   overflow: hidden !important;
 }
+
+.no-padding {
+  .mat-dialog-container {
+    padding: 0;
+  }
+}
