@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit, Optional } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MAT_DIALOG_DATA } from '@angular/material';
 
@@ -39,9 +39,10 @@ export class VideoPlayerComponent implements OnInit {
   @Input() videoId = 'x6u83op';
   videoStream;
 
-  constructor(private sanitizer: DomSanitizer, @Inject(MAT_DIALOG_DATA) private data) {
-    console.log(data);
-    this.videoId = data.id;
+  constructor(private sanitizer: DomSanitizer, @Optional() @Inject(MAT_DIALOG_DATA) private data) {
+    if (data) {
+      this.videoId = data.id;
+    }
   }
 
   ngOnInit() {

@@ -16,13 +16,13 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
         </div>
       </div>
     </mat-toolbar>
-    <mat-toolbar class="control-toolbar">
-      <span>controls</span>
-      <mat-form-field class="search-field">
-        <input type="text" matInput />
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
-    </mat-toolbar>
+    <!--    <mat-toolbar class="control-toolbar">-->
+    <!--      <span>controls</span>-->
+    <!--      <mat-form-field class="search-field">-->
+    <!--        <input type="text" matInput />-->
+    <!--        <mat-icon matSuffix>search</mat-icon>-->
+    <!--      </mat-form-field>-->
+    <!--    </mat-toolbar>-->
   `,
   styles: [
     `

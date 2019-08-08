@@ -17,7 +17,6 @@ export class LandingComponent implements OnInit {
   ngOnInit() {}
 
   startStream(video) {
-    console.log(video);
     this.videoPlayer.open(video);
   }
 }

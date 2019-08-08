@@ -2,15 +2,7 @@
 @import 'styles/branding.scss';
 @import 'styles/structural.scss';
 @import 'styles/angular.material.scss';
-
-@font-face {
-  font-family: 'DIN Condensed';
-  src: url('assets/fonts/DIN Condensed Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'DIN Alternate';
-  src: url('assets/fonts/DINPro-Regular.otf') format('opentype');
-}
+@import 'fonts';
 //* {
 //  font-family: "DIN Alternate", Roboto, 'Helvetica Neue', sans-serif !important;
 //}
