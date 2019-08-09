@@ -8,7 +8,7 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
   template: `
     <mat-toolbar class="scr-toolbar">
       <div class="toolbar-items">
-        <span class="branding">Seoul Community Radio</span>
+        <span class="branding show-gt-sm">Seoul Community Radio</span>
         <div class="scr-nav">
           <button class="listen" mat-flat-button color="warn" (click)="playLive()">
             LIVE

@@ -51,3 +51,46 @@ body {
     padding: 0;
   }
 }
+
+.divider {
+  width: calc(100% - 2rem);
+  margin: auto;
+  border: 1px #ff3000 solid;
+  border-radius: 1px;
+}
+
+.show-xl {
+  display: none;
+}
+
+.show-gt-sm {
+  display: none;
+}
+
+// xl
+@media all and (max-width: 1690px) {
+  .show-xl {
+    display: inherit;
+  }
+}
+
+// lg
+@media all and (max-width: 1280px) {
+}
+
+// md
+@media all and (max-width: 980px) {
+}
+
+// sm
+@media all and (max-width: 736px) {
+}
+@media all and (min-width: 736px) {
+  .show-gt-sm {
+    display: inherit;
+  }
+}
+
+// xs
+@media all and (max-width: 480px) {
+}
