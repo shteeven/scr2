@@ -35,26 +35,31 @@ import { Component } from '@angular/core';
         overflow-y: auto;
       }
       main {
-        padding-bottom: 5rem;
+        padding-bottom: 1rem;
       }
       footer {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1rem;
         display: grid;
         padding-left: 1rem;
         padding-right: 1rem;
       }
       footer a {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
       }
       .social-container {
         grid-template-columns: auto 1fr;
         align-items: center;
         justify-items: start;
       }
-      /*.links {*/
-      /*  color: white;*/
-      /*}*/
+      @media all and (min-width: 736px) {
+        footer {
+          font-size: 1.5rem;
+        }
+        footer a {
+          font-size: 2.5rem;
+        }
+      }
     `
   ]
 })
