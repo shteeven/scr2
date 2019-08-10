@@ -43,9 +43,7 @@ export class MediaService {
 
   getPlaylist(id = 'x6gd0m') {
     return this.http
-      .get<{ list: any[] }>(
-        `${baseUrl}/user/scr/playlist/${id}?limit=${this.limit}&fields=id,title,thumbnail_240_url,description`
-      )
+      .get<{ list: any[] }>(`${baseUrl}/playlist/${id}/videos?limit=8&fields=id,title,thumbnail_240_url,description`)
       .pipe(
         map(({ list }) => {
           console.log(list);

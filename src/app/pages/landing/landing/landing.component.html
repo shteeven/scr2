@@ -6,11 +6,11 @@
 
   <div class="featured-container">
     <div class="featured-header">
-      <h2 class="mat-h1 ">Featured SHOWS</h2>
-      <p>Seoul Community Radio's featured shows</p>
+      <h2 class="mat-h1 ">LATEST SHOWS</h2>
+      <p>Check out Seoul Community Radio's latest shows</p>
     </div>
     <div class="featured-img-wrapper">
-      <mat-card *ngFor="let video of videos$ | async">
+      <mat-card *ngFor="let video of featured$ | async">
         <div class="video-wrapper img">
           <div
             class="img video-container featured-img"
@@ -31,11 +31,11 @@
   <div class="divider"></div>
   <div class="featured-container">
     <div class="featured-header">
-      <h2 class="mat-h1 ">LATEST SHOWS</h2>
-      <p>Check out Seoul Community Radio's latest shows</p>
+      <h2 class="mat-h1 ">Featured SHOWS</h2>
+      <p>Seoul Community Radio's featured shows</p>
     </div>
     <div class="featured-img-wrapper">
-      <mat-card *ngFor="let video of featured$ | async">
+      <mat-card *ngFor="let video of videos$ | async">
         <div class="video-wrapper img">
           <div
             class="img video-container featured-img"
