@@ -9,9 +9,12 @@ import { VideoPlayerService } from '../../../shared/video-player/video-player.se
 })
 export class LandingComponent implements OnInit {
   videos$;
+  featured$;
+  limit;
 
   constructor(private mediaService: MediaService, private videoPlayer: VideoPlayerService) {
     this.videos$ = mediaService.getVideoList();
+    this.featured$ = mediaService.getPlaylist();
   }
 
   ngOnInit() {}
