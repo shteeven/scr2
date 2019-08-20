@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './layout/header/header.component';
 import { IsScrolledDirective } from './directive/scrolling/is-scrolled.directive';
 import { ListenForScrollDirective } from './directive/scrolling/listen-for-scroll.directive';
+import { ArticleEntryComponent } from './components/article-entry/article-entry.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ListenForScrollDirective } from './directive/scrolling/listen-for-scrol
     ChatComponent,
     HeaderComponent,
     IsScrolledDirective,
-    ListenForScrollDirective
+    ListenForScrollDirective,
+    ArticleEntryComponent
   ],
   imports: [
     AppRoutingModule,

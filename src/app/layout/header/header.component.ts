@@ -13,6 +13,14 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
           <button class="listen" mat-flat-button color="warn" (click)="playLive()">
             LIVE
           </button>
+          <a
+            class="listen shop"
+            mat-button
+            href="https://seoul-community-radio.myshopify.com/collections/long-sleeves"
+            target="_blank"
+          >
+            Shop
+          </a>
         </div>
       </div>
     </mat-toolbar>
@@ -26,6 +34,9 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
   `,
   styles: [
     `
+      .shop {
+        color: white;
+      }
       .branding {
         font-family: 'DIN Condensed', Roboto, 'Helvetica Neue', sans-serif;
         font-size: 2.25rem;
@@ -37,6 +48,10 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
       }
       .scr-nav {
         text-align: end;
+        display: grid;
+        grid-template-columns: auto auto;
+        /*grid-auto-columns: auto;*/
+        grid-gap: 0.25rem;
       }
       .toolbar-items {
         display: flex;
