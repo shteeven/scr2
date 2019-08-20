@@ -1,32 +1,32 @@
-<form [formGroup]="form" style="background: white">
-  <div formArrayName="items" *ngFor="let item of form.get('items').controls; let i = index">
-    <div [formGroupName]="i">
-      <mat-form-field appearance="outline">
-        <mat-label>Label</mat-label>
-        <input matInput formControlName="label" />
-      </mat-form-field>
+<!--<form [formGroup]="form" style="background: white">-->
+<!--  <div formArrayName="items" *ngFor="let item of form.get('items').controls; let i = index">-->
+<!--    <div [formGroupName]="i">-->
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Label</mat-label>-->
+<!--        <input matInput formControlName="label" />-->
+<!--      </mat-form-field>-->
 
-      <mat-form-field appearance="outline">
-        <mat-label>Type</mat-label>
-        <select matNativeControl formControlName="type" required>
-          <option value="IMAGE">Image</option>
-          <option value="TEXT">Text</option>
-        </select>
-      </mat-form-field>
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Type</mat-label>-->
+<!--        <select matNativeControl formControlName="type" required>-->
+<!--          <option value="IMAGE">Image</option>-->
+<!--          <option value="TEXT">Text</option>-->
+<!--        </select>-->
+<!--      </mat-form-field>-->
 
-      <mat-form-field appearance="outline">
-        <mat-label>Text</mat-label>
-        <textarea formControlName="value" matInput></textarea>
-      </mat-form-field>
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Text</mat-label>-->
+<!--        <textarea formControlName="value" matInput></textarea>-->
+<!--      </mat-form-field>-->
 
-      <mat-form-field appearance="outline">
-        <mat-label>Image url</mat-label>
-        <input formControlName="imageUrl" matInput />
-      </mat-form-field>
-    </div>
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Image url</mat-label>-->
+<!--        <input formControlName="imageUrl" matInput />-->
+<!--      </mat-form-field>-->
+<!--    </div>-->
 
-    <!--    Chosen name: {{ form.controls.items.controls[i].controls.name.value }}-->
-  </div>
-</form>
+<!--    &lt;!&ndash;    Chosen name: {{ form.controls.items.controls[i].controls.name.value }}&ndash;&gt;-->
+<!--  </div>-->
+<!--</form>-->
 
 <button mat-raised-button (click)="addItem()">Add Element</button>
