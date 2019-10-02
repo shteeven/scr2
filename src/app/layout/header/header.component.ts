@@ -50,7 +50,6 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
         text-align: end;
         display: grid;
         grid-template-columns: auto auto;
-        /*grid-auto-columns: auto;*/
         grid-gap: 0.25rem;
       }
       .toolbar-items {
