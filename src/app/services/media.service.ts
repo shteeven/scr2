@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 // import {image, name, seed} from 'fak';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, mergeMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 export interface MediaMetadata {
   label: string;
@@ -33,15 +33,10 @@ export class MediaService {
       .get<{ list: any[] }>(
         `${baseUrl}/user/scr/videos?limit=${this.limit}&fields=id,title,thumbnail_240_url,description`
       )
-      .pipe(
-        map(({ list }) => {
-          console.log(list);
-          return list;
-        })
-      );
+      .pipe(map(({ list }) => list));
   }
 
-  getPlaylist(id = 'x6gd0m') {
+  getPlaylist(id) {
     return this.http
       .get<{ list: any[] }>(`${baseUrl}/playlist/${id}/videos?limit=8&fields=id,title,thumbnail_240_url,description`)
       .pipe(
