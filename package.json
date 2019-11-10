@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
-    "precommit": "run-s format:fix lint",
+    "precommit": "run-s format:fix",
     "postinstall": "ng build --prod --output-hashing=all"
   },
   "private": true,

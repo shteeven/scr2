@@ -7,7 +7,6 @@
   <div class="featured-container">
     <div class="featured-header">
       <h2 class="mat-h1 capitalized">Featured</h2>
-      <p>Seoul Community Radio's featured shows</p>
     </div>
     <div class="featured-img-wrapper">
       <mat-card *ngFor="let video of featured$ | async">
@@ -32,10 +31,33 @@
   <div class="featured-container">
     <div class="featured-header">
       <h2 class="mat-h1 capitalized">Latest</h2>
-      <p>Check out Seoul Community Radio's latest shows</p>
     </div>
     <div class="featured-img-wrapper">
       <mat-card *ngFor="let video of videos$ | async">
+        <div class="video-wrapper img">
+          <div
+            class="img video-container featured-img"
+            [ngStyle]="{ 'background-image': 'url(' + video.thumbnail_240_url + ')' }"
+          ></div>
+          <button class="featured-overlay" (click)="startStream(video)">
+            <mat-icon>play_arrow</mat-icon>
+          </button>
+        </div>
+        <mat-card-content>
+          <h3>
+            {{ video.title }}
+          </h3>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="featured-container">
+    <div class="featured-header">
+      <h2 class="mat-h1 capitalized">Interviews</h2>
+    </div>
+    <div class="featured-img-wrapper">
+      <mat-card *ngFor="let video of interviews$ | async">
         <div class="video-wrapper img">
           <div
             class="img video-container featured-img"
