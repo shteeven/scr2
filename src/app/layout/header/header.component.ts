@@ -24,13 +24,6 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
         </div>
       </div>
     </mat-toolbar>
-    <!--    <mat-toolbar class="control-toolbar">-->
-    <!--      <span>controls</span>-->
-    <!--      <mat-form-field class="search-field">-->
-    <!--        <input type="text" matInput />-->
-    <!--        <mat-icon matSuffix>search</mat-icon>-->
-    <!--      </mat-form-field>-->
-    <!--    </mat-toolbar>-->
   `,
   styles: [
     `
@@ -49,7 +42,9 @@ import { VideoPlayerService } from '../../shared/video-player/video-player.servi
       .scr-nav {
         text-align: end;
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
+        grid-auto-flow: column;
+        grid-auto-columns: auto;
         grid-gap: 0.25rem;
       }
       .toolbar-items {

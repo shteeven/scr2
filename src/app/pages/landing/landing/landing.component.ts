@@ -11,10 +11,15 @@ export class LandingComponent {
   videos$ = this.mediaService.getVideoList();
   featured$ = this.mediaService.getPlaylist('x6gd0m');
   interviews$ = this.mediaService.getPlaylist('x6iutn');
+  audioPlayerOpen = false;
 
   constructor(private mediaService: MediaService, private videoPlayer: VideoPlayerService) {}
 
   startStream(video) {
     this.videoPlayer.open(video);
+  }
+
+  toggleAudioStream() {
+    this.audioPlayerOpen = !this.audioPlayerOpen;
   }
 }
