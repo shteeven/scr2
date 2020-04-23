@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MediaService } from '../../../services/media.service';
 import { VideoPlayerService } from '../../../shared/video-player/video-player.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-landing',
@@ -11,6 +12,7 @@ export class LandingComponent {
   videos$ = this.mediaService.getVideoList();
   featured$ = this.mediaService.getPlaylist('x6gd0m');
   interviews$ = this.mediaService.getPlaylist('x6iutn');
+  formGroup = new FormGroup({});
   playlistList = [
     {
       label: 'Featured',
