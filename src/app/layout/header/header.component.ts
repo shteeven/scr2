@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VideoPlayerService } from '../../shared/video-player/video-player.service';
 import { FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 // Stateful component
 
@@ -22,26 +23,9 @@ import { FormGroup } from '@angular/forms';
           >
             Shop
           </a>
-          <form
-            [formGroup]="formGroup"
-            class="donate"
-            target="_blank"
-            action="https://www.paypal.com/cgi-bin/webscr"
-            method="post"
-          >
-            <!-- Identify your business so that you can collect the payments. -->
-            <input type="hidden" name="business" value="seoulcommunityradio@gmail.com" />
-            <!-- Specify a Donate button. -->
-            <input type="hidden" name="cmd" value="_donations" />
-            <!-- Specify details about the contribution -->
-            <input type="hidden" name="item_name" value="Seoul Community Radio" />
-            <input type="hidden" name="item_number" value="Support community radio" />
-            <input type="hidden" name="currency_code" value="USD" />
-            <!-- Display the payment button. -->
-            <button class="listen" mat-stroked-button type="submit" name="submit">
-              <i class="fas fa-beer"></i> Buy Us a Beer
-            </button>
-          </form>
+          <button class="listen donate" mat-stroked-button (click)="onSubmit()">
+            <i class="fas fa-beer"></i> Buy Us a Beer
+          </button>
         </div>
       </div>
     </mat-toolbar>
@@ -82,21 +66,7 @@ import { FormGroup } from '@angular/forms';
         background-color: black;
         border-bottom: rgba(79, 79, 79, 1) solid 1px;
       }
-      .action-row {
-        display: flex;
-        justify-content: space-between;
-      }
-      .search-field {
-        font-size: 0.75rem;
-        margin-bottom: -0.5rem;
-      }
-      .control-toolbar {
-        display: flex;
-        justify-content: space-between;
-        height: 3rem;
-        background-color: black;
-      }
-      .donate button {
+      .donate {
         background: #ffc400;
       }
     `
@@ -105,11 +75,55 @@ import { FormGroup } from '@angular/forms';
 export class HeaderComponent {
   formGroup = new FormGroup({});
 
-  constructor(private videoPlayer: VideoPlayerService) {}
+  constructor(private videoPlayer: VideoPlayerService, private http: HttpClient) {
+    // this.formGroup.
+  }
 
   playLive() {
     this.videoPlayer.open({
       id: 'x6u83op'
     });
+  }
+
+  onSubmit() {
+    const form = document.createElement('form');
+    form.target = '_blank';
+    form.method = 'POST';
+    form.action = 'https://www.paypal.com/cgi-bin/webscr';
+    form.style.display = 'none';
+    const data = [
+      {
+        name: 'business',
+        value: 'seoulcommunityradio@gmail.com'
+      },
+      {
+        name: 'cmd',
+        value: '_donations'
+      },
+      {
+        name: 'item_name',
+        value: 'Seoul Community Radio'
+      },
+      {
+        name: 'item_number',
+        value: 'Support community radio'
+      },
+      {
+        name: 'currency_code',
+        value: 'USD'
+      }
+    ];
+
+    data.forEach(({ name, value }) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
   }
 }
