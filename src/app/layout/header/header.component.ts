@@ -45,13 +45,6 @@ import { FormGroup } from '@angular/forms';
         </div>
       </div>
     </mat-toolbar>
-    <!--    <mat-toolbar class="control-toolbar">-->
-    <!--      <span>controls</span>-->
-    <!--      <mat-form-field class="search-field">-->
-    <!--        <input type="text" matInput />-->
-    <!--        <mat-icon matSuffix>search</mat-icon>-->
-    <!--      </mat-form-field>-->
-    <!--    </mat-toolbar>-->
   `,
   styles: [
     `
@@ -79,7 +72,7 @@ import { FormGroup } from '@angular/forms';
         width: 100%;
         height: 100%;
         align-items: center;
-        background-image: url(https://gftfc5lwyu-mrg.preview.forestry.io//images/scr_logo.png);
+        background-image: url('../../../assets/brand/brand-logo.jpg');
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -104,15 +97,7 @@ import { FormGroup } from '@angular/forms';
         background-color: black;
       }
       .donate button {
-        /*cursor: pointer;*/
         background: #ffc400;
-        /*border: none;*/
-        /*padding: 0 0.5rem;*/
-        /*line-height: 1.5rem;*/
-        /*font-family: DIN Alternate;*/
-        /*font-size: 14px;*/
-        /*font-weight: 500;*/
-        /*border-radius: 2px;*/
       }
     `
   ]
