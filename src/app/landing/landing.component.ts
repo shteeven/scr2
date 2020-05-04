@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MediaService } from '../../../services/media.service';
-import { VideoPlayerService } from '../../../shared/video-player/video-player.service';
+import { MediaService } from '../media.service';
+import { VideoPlayerService } from '../video-player/video-player.service';
 import { FormGroup } from '@angular/forms';
 
 @Component({

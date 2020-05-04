@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { VideoPlayerService } from '../../shared/video-player/video-player.service';
-import { FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { VideoPlayerService } from '../video-player/video-player.service';
 
 // Stateful component
-
 @Component({
   selector: 'app-header',
   template: `
@@ -35,14 +32,17 @@ import { HttpClient } from '@angular/common/http';
       .shop {
         color: white;
       }
+
       .branding {
         font-family: 'DIN Condensed', Roboto, 'Helvetica Neue', sans-serif;
         font-size: 2.25rem;
       }
+
       .listen {
         border-radius: unset;
         line-height: 1.75rem;
       }
+
       .scr-nav {
         text-align: end;
         display: grid;
@@ -50,22 +50,25 @@ import { HttpClient } from '@angular/common/http';
         grid-gap: 0.25rem;
         line-height: 1.75rem;
       }
+
       .toolbar-items {
         display: flex;
         justify-content: space-between;
         width: 100%;
         height: 100%;
         align-items: center;
-        background-image: url('../../../assets/brand/brand-logo.jpg');
+        background-image: url('../../assets/brand/brand-logo.jpg');
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
       }
+
       .scr-toolbar {
         padding: 0.5rem 1rem;
         background-color: black;
         border-bottom: rgba(79, 79, 79, 1) solid 1px;
       }
+
       .donate {
         background: #ffc400;
       }
@@ -73,11 +76,7 @@ import { HttpClient } from '@angular/common/http';
   ]
 })
 export class HeaderComponent {
-  formGroup = new FormGroup({});
-
-  constructor(private videoPlayer: VideoPlayerService, private http: HttpClient) {
-    // this.formGroup.
-  }
+  constructor(private videoPlayer: VideoPlayerService) {}
 
   playLive() {
     this.videoPlayer.open({

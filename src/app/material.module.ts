@@ -20,12 +20,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const cdkExports = [DragDropModule, LayoutModule, ScrollingModule];
 
 const materialExports = [
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
   MatDividerModule,
   MatGridListModule,
   MatIconModule,
