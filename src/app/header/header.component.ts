@@ -7,7 +7,7 @@ import { VideoPlayerService } from '../video-player/video-player.service';
   template: `
     <mat-toolbar class="scr-toolbar">
       <div class="toolbar-items">
-        <span class="branding show-gt-sm">Seoul Community Radio</span>
+        <!--        <span class="branding show-gt-sm">Seoul Community Radio</span>-->
         <div class="scr-nav">
           <button class="listen" mat-flat-button color="warn" (click)="playLive()">
             LIVE
@@ -52,8 +52,8 @@ import { VideoPlayerService } from '../video-player/video-player.service';
       }
 
       .toolbar-items {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        justify-items: right;
         width: 100%;
         height: 100%;
         align-items: center;
@@ -71,6 +71,12 @@ import { VideoPlayerService } from '../video-player/video-player.service';
 
       .donate {
         background: #ffc400;
+      }
+
+      @media all and (max-width: 636px) {
+        .toolbar-items {
+          background-position: left center;
+        }
       }
     `
   ]

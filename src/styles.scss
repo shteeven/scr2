@@ -1,8 +1,6 @@
 @import 'styles/theming';
-@import 'styles/branding.scss';
-@import 'styles/structural.scss';
-@import 'styles/angular.material.scss';
-@import 'fonts';
+@import 'src/styles/structural';
+@import 'styles/fonts';
 //* {
 //  font-family: "DIN Alternate", Roboto, 'Helvetica Neue', sans-serif !important;
 //}
@@ -85,6 +83,7 @@ body {
 // sm
 @media all and (max-width: 736px) {
 }
+// gt-sm
 @media all and (min-width: 736px) {
   .show-gt-sm {
     display: inherit;

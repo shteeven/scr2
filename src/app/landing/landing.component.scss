@@ -75,45 +75,9 @@ mat-card {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
   background: transparent;
 }
-
-// @media only screen and (min-width: 600px) {
-//   .featured-img-wrapper {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-// @media only screen and (min-width: 960px) {
-//   .featured-img-wrapper {
-//     grid-template-columns: repeat(4, minMax(175px, 1fr));
-//   }
-// }
-
-// @media only screen and (min-width: 1500px) {
-//   .featured-img-wrapper {
-//     grid-template-columns: repeat(8, minMax(175px, 1fr));
-//   }
-// }
-
-//@media only screen and (max-width: 1000px) {
-//  .featured-img-wrapper {
-//    grid-template-columns: 1fr 1fr 1fr 1fr;
-//  }
-//}
-//.feature {
-//  background-color: red;
-//  background-image: url(../../../../assets/featured.png);
-//  background-size: cover;
-//  background-position: center;
-//  background-repeat: no-repeat;
-//}
-//.feature-wrapper {
-//  height: 80vh;
-//  width: 100%;
-//  max-width: 100%;
-//}
 
 .featured-img {
   width: 100%;

@@ -1,0 +1,13 @@
+// WRAPPER container elements; cards, headers, footers
+.grid-container {
+  padding: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+// CONTENT container elements; buttons, form-fields
+.grid-content {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 0.25rem;
+}
