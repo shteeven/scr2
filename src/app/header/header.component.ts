@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { VideoPlayerService } from '../video-player/video-player.service';
+import { MediaService } from '../media.service';
+
+const FEATURE_VIDEO_STREAM_ID = 'x6u83op';
 
 // Stateful component
 @Component({
@@ -9,6 +11,9 @@ import { VideoPlayerService } from '../video-player/video-player.service';
       <div class="toolbar-items">
         <!--        <span class="branding show-gt-sm">Seoul Community Radio</span>-->
         <div class="scr-nav">
+          <button class="listen" mat-flat-button color="warn" (click)="playAudioLive()">
+            AUDIO
+          </button>
           <button class="listen" mat-flat-button color="warn" (click)="playLive()">
             LIVE
           </button>
@@ -27,67 +32,19 @@ import { VideoPlayerService } from '../video-player/video-player.service';
       </div>
     </mat-toolbar>
   `,
-  styles: [
-    `
-      .shop {
-        color: white;
-      }
-
-      .branding {
-        font-family: 'DIN Condensed', Roboto, 'Helvetica Neue', sans-serif;
-        font-size: 2.25rem;
-      }
-
-      .listen {
-        border-radius: unset;
-        line-height: 1.75rem;
-      }
-
-      .scr-nav {
-        text-align: end;
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-gap: 0.25rem;
-        line-height: 1.75rem;
-      }
-
-      .toolbar-items {
-        display: grid;
-        justify-items: right;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        background-image: url('../../assets/brand/brand-logo.jpg');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-
-      .scr-toolbar {
-        padding: 0.5rem 1rem;
-        background-color: black;
-        border-bottom: rgba(79, 79, 79, 1) solid 1px;
-      }
-
-      .donate {
-        background: #ffc400;
-      }
-
-      @media all and (max-width: 636px) {
-        .toolbar-items {
-          background-position: left center;
-        }
-      }
-    `
-  ]
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private videoPlayer: VideoPlayerService) {}
+  constructor(private mediaService: MediaService) {}
 
   playLive() {
-    this.videoPlayer.open({
-      id: 'x6u83op'
+    this.mediaService.openPlayer({
+      id: FEATURE_VIDEO_STREAM_ID
     });
+  }
+
+  playAudioLive() {
+    this.mediaService.openAudioPlayer();
   }
 
   onSubmit() {

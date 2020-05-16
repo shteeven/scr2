@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AudioPlayerComponent } from './audio-player/audio-player.component';
 
 export interface MediaMetadata {
   label: string;
@@ -26,7 +29,21 @@ const baseUrl = 'https://api.dailymotion.com';
 })
 export class MediaService {
   limit = 8;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private matDialog: MatDialog) {}
+
+  openPlayer(video) {
+    this.matDialog.open(VideoPlayerComponent, {
+      panelClass: 'no-padding',
+      width: '600px',
+      data: video
+    });
+  }
+
+  openAudioPlayer() {
+    this.matDialog.open(AudioPlayerComponent, {
+      width: '600px'
+    });
+  }
 
   getVideoList() {
     return this.http

@@ -27,9 +27,22 @@ import { Component } from '@angular/core';
         </div>
       </footer>
     </div>
+    <app-audio-player></app-audio-player>
   `,
   styles: [
     `
+      .example {
+        position: fixed;
+        top: 0;
+        height: 40px;
+        width: 200px;
+      }
+      .one {
+        background: blue;
+      }
+      .two {
+        background: red;
+      }
       #app-view {
         height: 100vh;
         overflow-y: auto;

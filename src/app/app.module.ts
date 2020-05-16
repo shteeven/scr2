@@ -10,9 +10,10 @@ import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './landing/landing.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { MaterialModule } from './material.module';
+import { AudioPlayerComponent } from './audio-player/audio-player.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LandingComponent, VideoPlayerComponent],
+  declarations: [AppComponent, HeaderComponent, LandingComponent, VideoPlayerComponent, AudioPlayerComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -22,6 +23,7 @@ import { MaterialModule } from './material.module';
     MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [VideoPlayerComponent, AudioPlayerComponent]
 })
 export class AppModule {}
