@@ -41,7 +41,8 @@ export class MediaService {
 
   openAudioPlayer() {
     this.matDialog.open(AudioPlayerComponent, {
-      width: '600px'
+      width: '600px',
+      panelClass: 'audio-frame'
     });
   }
 
