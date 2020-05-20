@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MediaService } from '../media.service';
-import { VideoPlayerService } from '../video-player/video-player.service';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -44,9 +43,9 @@ export class LandingComponent {
     }
   ];
 
-  constructor(private mediaService: MediaService, private videoPlayer: VideoPlayerService) {}
+  constructor(private mediaService: MediaService) {}
 
   startStream(video) {
-    this.videoPlayer.open(video);
+    this.mediaService.openPlayer(video);
   }
 }
