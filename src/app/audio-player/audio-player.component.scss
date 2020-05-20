@@ -1,5 +1,9 @@
 .audio-frame {
   width: 100%;
-  min-height: 150px;
+  max-height: 110px;
   border: 0;
+}
+
+.audio-frame .now-playing-title {
+  color: red;
 }
