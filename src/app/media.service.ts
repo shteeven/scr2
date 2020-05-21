@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-// import {image, name, seed} from 'fak';
-import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AudioPlayerComponent } from './audio-player/audio-player.component';
@@ -24,14 +22,37 @@ export interface MediaItem {
 
 const baseUrl = 'https://api.dailymotion.com';
 
+export const liveStreamId = 'x6u83op';
+
 @Injectable({
   providedIn: 'root'
 })
 export class MediaService {
   limit = 8;
-  constructor(private http: HttpClient, private matDialog: MatDialog) {}
+
+  constructor(private http: HttpClient, private matDialog: MatDialog) {
+    this.http
+      .get<{ list: any[] }>(`${baseUrl}/videos?limit=1&live_onair=true&fields=id`)
+      .pipe(tap(val => console.log(val)))
+      .subscribe();
+  }
+
+  getLiveStatus() {
+    return this.http.get<any>(`${baseUrl}/videos?limit=1&live_onair=true&ids=${liveStreamId}&fields=id`).pipe(
+      tap(val => console.log(val)),
+      map(({ total }) => !!total)
+    );
+  }
 
   openPlayer(video) {
+    this.matDialog.open(VideoPlayerComponent, {
+      panelClass: 'no-padding',
+      width: '600px',
+      data: video
+    });
+  }
+
+  openVideoPlayer(video) {
     this.matDialog.open(VideoPlayerComponent, {
       panelClass: 'no-padding',
       width: '600px',

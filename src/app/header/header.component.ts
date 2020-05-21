@@ -11,12 +11,20 @@ const FEATURE_VIDEO_STREAM_ID = 'x6u83op';
       <div class="toolbar-items">
         <!--        <span class="branding show-gt-sm">Seoul Community Radio</span>-->
         <div class="scr-nav">
-          <button class="listen" mat-flat-button color="warn" (click)="playAudioLive()">
-            AUDIO
-          </button>
-          <button class="listen" mat-flat-button color="warn" (click)="playLive()">
+          <button
+            *ngIf="isLive$ | async; else listenBtn"
+            class="listen"
+            mat-flat-button
+            color="warn"
+            (click)="playLive()"
+          >
             LIVE
           </button>
+          <ng-template #listenBtn>
+            <button class="listen" mat-flat-button color="warn" (click)="playAudioLive()">
+              Listen
+            </button>
+          </ng-template>
           <a
             class="listen shop"
             mat-button
@@ -35,6 +43,7 @@ const FEATURE_VIDEO_STREAM_ID = 'x6u83op';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  isLive$ = this.mediaService.getLiveStatus();
   constructor(private mediaService: MediaService) {}
 
   playLive() {
